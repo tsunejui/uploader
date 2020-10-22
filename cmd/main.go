@@ -6,6 +6,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"backup-tool/cmd/app/pull"
+	"backup-tool/cmd/app/push"
 	"backup-tool/internal/pkg/lib/cmd"
 )
 
@@ -40,9 +41,11 @@ func start() error {
 			Service: pull.New(),
 		},
 		&cmd.Command{
-			Use:   "push",
-			Short: "Push data to AWS s3 bucket",
-			Long:  `Push data to AWS s3 bucket`,
+			Use:     "push",
+			Short:   "Push data to AWS s3 bucket",
+			Long:    `Push data to AWS s3 bucket`,
+			Args:    cobra.MinimumNArgs(2),
+			Service: push.New(),
 		},
 	); err != nil {
 		return err
