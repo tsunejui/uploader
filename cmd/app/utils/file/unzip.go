@@ -9,7 +9,7 @@ import (
 
 // refer: http://blog.ralch.com/tutorial/golang-working-with-zip/
 
-func unzip(archive, target string) error {
+func Unzip(archive, target string) error {
 	reader, err := zip.OpenReader(archive)
 	if err != nil {
 		return err

@@ -9,9 +9,9 @@ func GetFileName(path string) string {
 	return filepath.Base(path)
 }
 
-func GetFolderName(path string) string {
+func GetFolderName(path string, avoidEmpty bool) string {
 	dir := filepath.Dir(path)
-	if dir == "." {
+	if dir == "." && avoidEmpty {
 		return path
 	}
 	return dir

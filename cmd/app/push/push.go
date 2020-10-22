@@ -78,13 +78,13 @@ func (a *App) Close(ctx *cobra.Command) error {
 }
 
 func getZipName(source string) string {
-	var zipName string
 	if len(rename) != 0 {
-		zipName = rename
+		return rename + ".zip"
 	}
 
+	var zipName string
 	if file.IsDir(source) {
-		zipName = file.GetFolderName(source)
+		zipName = file.GetFolderName(source, true)
 	} else {
 		zipName = file.GetFileName(source)
 	}
