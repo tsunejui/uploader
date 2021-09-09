@@ -1,6 +1,6 @@
-Cloud Drive Uploader
+Uploader
 ---
-This tool be used to upload or download files in AWS s3 bucket for backup data, and also to compress folder to zip file.
+Uploader is a file tool that can be used to upload and download file in AWS s3 bucket, and also to compress directory to zip file for backing data.
 
 How does it work
 ---
